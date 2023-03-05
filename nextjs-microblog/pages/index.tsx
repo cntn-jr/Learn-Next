@@ -17,6 +17,15 @@ export const getStaticProps: GetStaticProps = async () => {
     };
 };
 
+// SSRの場合
+// export async function getServerSideProps() {
+//     return {
+//         props: {
+//             // コンポーネントに渡すためのProps
+//         },
+//     };
+// }
+
 export default function Home({ allPostsData }: any) {
     console.log(`allPostsData id: ${allPostsData[0].id}`);
     console.log(`allPostsData title: ${allPostsData[0].title}`);
