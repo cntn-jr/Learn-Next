@@ -1,9 +1,10 @@
-import Layout from "@/components/Layout";
+import Layout, { siteTitle } from "@/components/Layout";
 import Link from "next/link";
 import utilStyle from "../styles/utils.module.css";
 import styles from "../styles/Home.module.css";
 import { getPostsData } from "../lib/post";
 import { GetStaticProps } from "next";
+import Head from "next/head";
 
 // SSGの場合
 export const getStaticProps: GetStaticProps = async () => {
@@ -33,7 +34,10 @@ export default function Home({ allPostsData }: any) {
     console.log(`allPostsData thumbnail: ${allPostsData[0].thumbnail}`);
 
     return (
-        <Layout>
+        <Layout home>
+            <Head>
+                <title>{siteTitle}</title>
+            </Head>
             <section className={utilStyle.headingMd}>
                 <p>
                     私は見習いバックエンドエンジニアです/Udemyで勉強中です/好きな言語はPHPとJavascriptです
